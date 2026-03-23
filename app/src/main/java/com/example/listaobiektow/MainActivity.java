@@ -1,6 +1,8 @@
 package com.example.listaobiektow;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         listViewProdukty = findViewById(R.id.listViewProdukty);
         listViewProdukty.setAdapter(arrayAdapter);
 
-
+        listViewProdukty.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                arrayListProdukty.get(position).odwroc();
+                arrayAdapter.notifyDataSetChanged();
+            }
+        });
     }
 }

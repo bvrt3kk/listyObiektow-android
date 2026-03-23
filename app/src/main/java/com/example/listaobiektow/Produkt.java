@@ -10,6 +10,10 @@ public class Produkt {
         czyKupione = false;
     }
 
+    public void odwroc(){
+        czyKupione = !czyKupione;
+    }
+
     @Override
     public String toString() {
         return "Produkt{" +
