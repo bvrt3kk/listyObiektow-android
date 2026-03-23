@@ -16,6 +16,36 @@
     <ListView
         android:id="@+id/listViewProdukty"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/editTextNazwaProduktu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="nazwa produktu" />
+
+    <EditText
+        android:id="@+id/editTextCena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:hint="cena" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dodaj" />
+
+    <Button
+        android:id="@+id/buttonUsun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Usuń kupione" />
 
 </LinearLayout>
