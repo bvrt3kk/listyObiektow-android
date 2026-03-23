@@ -1,6 +1,8 @@
 package com.example.listaobiektow;
 
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +10,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    ArrayList<Produkt> arrayListProdukty;
+    ArrayAdapter<Produkt> arrayAdapter;
+    ListView listViewProdukty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +28,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        arrayListProdukty = new ArrayList<>();
+        arrayListProdukty.add(new Produkt("chleb", 4.99));
+        arrayListProdukty.add(new Produkt("bułka", 0.60));
+        arrayListProdukty.add(new Produkt("jogurt", 3.69));
+
+        arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListProdukty);
+        listViewProdukty = findViewById(R.id.listViewProdukty);
+        listViewProdukty.setAdapter(arrayAdapter);
+
+
     }
 }
